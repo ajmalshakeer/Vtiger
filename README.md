@@ -1,1 +1,1 @@
-i have go through the problome statement on string that provided by VTIGER.By my understanding and analysis i have solved the problome with my level best.
+This Java code demonstrates a method to centralize text within specified line lengths.The centralizeString method takes an input string(words) and a maximum line length (maxLength).It formats the input text by centralizing each line within the specified maximum length, applying left padding to ensure proper alignment.
