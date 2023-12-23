@@ -1,9 +1,8 @@
 package String_problome;
 
-public class Vtiger {
-
-
-    //initializing a method to centralizing the input text
+public class Vtiger_function {
+    
+     //initializing a method to centralizing the input text
     public  String centralizeString(String words, int maxLength) {
         String[] wordArray = words.split("\\s+");
         StringBuilder formattedText = new StringBuilder();//using the proper string methods
@@ -47,15 +46,5 @@ public class Vtiger {
         formattedLine.append(line);
 
         return formattedLine.toString();
-    }
-
-    public static void main(String[] args) {
-        String words = "Vtiger CRM is a comprehensive customer relationship management(CRM) software designed to streamline and enhance business operations.Vtiger CRM provides a range of features that cater to various aspects of customer relationship management,including sales automation,marketing automation,customer support& invetory management.";
-        int maxLength = 40;
-        
-        Vtiger obj = new Vtiger();
-        
-        String FormattedString = obj.centralizeString(words, maxLength);
-        System.out.println(FormattedString);
     }
 }
