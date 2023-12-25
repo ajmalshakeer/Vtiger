@@ -32,7 +32,7 @@ public class Vtiger_function {
             return line;
         } else {
             int totalPadding = maxLength - line.length();
-            int leftPadding = totalPadding / 3;
+            int leftPadding = totalPadding / 2;
             int rightPadding = totalPadding - leftPadding;
 
             StringBuilder formattedLine = new StringBuilder();
