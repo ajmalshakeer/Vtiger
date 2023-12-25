@@ -1,23 +1,22 @@
 package String_problome;
 
 public class Vtiger_function {
-    
-     //initializing a method to centralizing the input text
-    public  String centralizeString(String words, int maxLength) {
+
+    // initializing a method to centralize the input text
+    public String centralizeString(String words, int maxLength) {
         String[] wordArray = words.split("\\s+");
-        StringBuilder formattedText = new StringBuilder();// using the proper string methods
-        StringBuilder line = new StringBuilder();
+        StringBuilder formattedText = new StringBuilder();
 
         // Applying the conditions for formatting and alignment of the string
         // along with using some string functions
 
+        StringBuilder line = new StringBuilder();
         for (String word : wordArray) {
-            line.append(word).append(" ");
-
-            if (line.length() > maxLength) {
+            if (line.length() + word.length() + 1 > maxLength) {
                 formattedText.append(centralizeLine(line.toString().trim(), maxLength)).append("\n");
                 line.setLength(0);
             }
+            line.append(word).append(" ");
         }
 
         if (line.length() > 0) {
@@ -27,27 +26,26 @@ public class Vtiger_function {
         return formattedText.toString(); // converting the formatted text to string and returning it
     }
 
-
-    //initializing another method to format each line to ensure proper centralization
+    // initializing another method to format each line to ensure proper centralization
     private static String centralizeLine(String line, int maxLength) {
-
-        // int leftPadding = 33;    //Setting the desired left padding
-
         if (line.length() >= maxLength) {
             return line;
         } else {
-            int leftPadding = (maxLength - line.length()) / 2; // Calculating the left padding dynamically
+            int totalPadding = maxLength - line.length();
+            int leftPadding = totalPadding / 3;
+            int rightPadding = totalPadding - leftPadding;
 
             StringBuilder formattedLine = new StringBuilder();
 
             for (int i = 0; i < leftPadding; i++) {
-                formattedLine.append(" "); 
-
+                formattedLine.append(" ");
+            }
             formattedLine.append(line);
 
+            for (int i = 0; i < rightPadding; i++) {
+                formattedLine.append(" ");
+            }
+            return formattedLine.toString();
         }
-        return formattedLine.toString();
     }
 }
-}
-
